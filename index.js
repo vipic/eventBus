@@ -13,13 +13,3 @@ class EventBus {
     this.cache[eventName].splice(index, 1)
   }
 }
-
-const util = new EventBus()
-const fn1 = ()=>{console.log('1')}
-const fn2 = ()=>{console.log('2')}
-util.on('click', fn1)
-util.on('click', fn2)
-util.off('click', fn1)
-util.off('click', fn2)
-util.emit('click')
-
