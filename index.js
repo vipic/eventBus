@@ -8,22 +8,18 @@ class EventBus {
     this.cache[eventName].forEach(fn=>fn())
   }
   off(eventName, fn) {
-    const index = indexOf(this.cache[eventName], fn)
+    const index = (this.cache[eventName] || []).find(item=>item === fn) || -1
     if (index === -1) return
     this.cache[eventName].splice(index, 1)
   }
-
-
 }
 
-function indexOf(arr, item) {
-  if (arr === undefined) return -1;
-  let index = -1;
-  for (let i = 0; i < arr.length; ++i) {
-    if (arr[i] === item) {
-      index = i;
-      break;
-    }
-  }
-  return index;
-}
+const util = new EventBus()
+const fn1 = ()=>{console.log('1')}
+const fn2 = ()=>{console.log('2')}
+util.on('click', fn1)
+util.on('click', fn2)
+util.off('click', fn1)
+util.off('click', fn2)
+util.emit('click')
+
