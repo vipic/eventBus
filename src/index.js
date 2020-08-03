@@ -13,3 +13,5 @@ class EventBus {
     this.cache[eventName].splice(index, 1)
   }
 }
+
+export default new EventBus()

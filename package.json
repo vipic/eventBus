@@ -1,0 +1,25 @@
+{
+  "name": "eventbus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vipic/eventBus.git"
+  },
+  "keywords": [
+    "eventbus"
+  ],
+  "author": "Mason",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vipic/eventBus/issues"
+  },
+  "homepage": "https://github.com/vipic/eventBus#readme",
+  "devDependencies": {
+    "rollup": "^2.23.0"
+  }
+}
